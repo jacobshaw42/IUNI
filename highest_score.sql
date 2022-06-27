@@ -5,7 +5,6 @@ SELECT
     100*SUM(isCorrect::int)/COUNT(isCorrect) AS score_percentage
 FROM User_answers
 GROUP BY userID, Attempt
-ORDER BY userID DESC
 ),
 
 cte2 AS (
@@ -14,7 +13,6 @@ SELECT
     MAX(score_percentage) AS max_score_percentage
 FROM cte 
 GROUP BY userID
-ORDER BY userID DESC
 )
 
 SELECT
